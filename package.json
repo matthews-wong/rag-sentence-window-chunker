@@ -1,0 +1,12 @@
+{
+  "name": "rag-sentence-window-chunker",
+  "version": "0.1.0",
+  "description": "Sentence-aware chunking with overlap and source offsets",
+  "type": "module",
+  "license": "MIT",
+  "engines": { "node": ">=22" },
+  "scripts": {
+    "test": "node --test",
+    "eval": "node scripts/eval.js"
+  }
+}
