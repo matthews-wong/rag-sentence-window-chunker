@@ -1,0 +1,26 @@
+[
+  {
+    "id": "backups",
+    "text": "Nightly backups run at 02:00 UTC and are written to the cold storage bucket. Each backup is encrypted with a per-environment key before upload. Backups are retained for 35 days, after which a lifecycle rule deletes them. Restores are tested every quarter on a scratch cluster."
+  },
+  {
+    "id": "deploys",
+    "text": "Deploys go out through the pipeline on every merge to main. A canary receives five percent of traffic for ten minutes before the rollout continues. If the error rate on the canary exceeds one percent, the pipeline rolls back automatically. Manual rollbacks use the previous image tag, which is always kept."
+  },
+  {
+    "id": "oncall",
+    "text": "The primary on-call engineer acknowledges a page within five minutes. If nobody acknowledges, the page escalates to the secondary after ten minutes. Every page must link to a runbook entry. Handoffs happen on Monday at 10:00 local time, e.g. in the weekly sync."
+  },
+  {
+    "id": "secrets",
+    "text": "Secrets are never stored in the repository. Services read them from the vault at start-up using a short-lived token. Tokens expire after one hour and cannot be renewed past twenty-four hours. Rotation of database passwords happens every ninety days."
+  },
+  {
+    "id": "logging",
+    "text": "Services emit structured JSON logs with a correlation id on every line. Logs are shipped to the central store within thirty seconds. Debug logs are sampled at one percent in production. Personal data must be redacted before a log line leaves the process."
+  },
+  {
+    "id": "capacity",
+    "text": "Capacity reviews happen once a month. The autoscaler adds nodes when memory saturation stays above eighty percent for five minutes. Scale-in is delayed by fifteen minutes to avoid flapping. Reserved instances cover the steady baseline of forty nodes."
+  }
+]

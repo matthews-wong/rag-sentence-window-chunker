@@ -1,0 +1,12 @@
+[
+  { "query": "how long are backups retained", "docId": "backups", "answer": "Backups are retained for 35 days, after which a lifecycle rule deletes them." },
+  { "query": "what time do nightly backups run", "docId": "backups", "answer": "Nightly backups run at 02:00 UTC and are written to the cold storage bucket." },
+  { "query": "canary traffic share before rollout", "docId": "deploys", "answer": "A canary receives five percent of traffic for ten minutes before the rollout continues." },
+  { "query": "when does the pipeline roll back automatically", "docId": "deploys", "answer": "If the error rate on the canary exceeds one percent, the pipeline rolls back automatically." },
+  { "query": "when does a page escalate to the secondary", "docId": "oncall", "answer": "If nobody acknowledges, the page escalates to the secondary after ten minutes." },
+  { "query": "how long do vault tokens last", "docId": "secrets", "answer": "Tokens expire after one hour and cannot be renewed past twenty-four hours." },
+  { "query": "how often are database passwords rotated", "docId": "secrets", "answer": "Rotation of database passwords happens every ninety days." },
+  { "query": "how fast are logs shipped to the central store", "docId": "logging", "answer": "Logs are shipped to the central store within thirty seconds." },
+  { "query": "when does the autoscaler add nodes", "docId": "capacity", "answer": "The autoscaler adds nodes when memory saturation stays above eighty percent for five minutes." },
+  { "query": "how many nodes are reserved instances", "docId": "capacity", "answer": "Reserved instances cover the steady baseline of forty nodes." }
+]
